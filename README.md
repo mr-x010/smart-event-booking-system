@@ -1,91 +1,73 @@
--Project Overview
-  .Smart Event Booking System built with React (client), Node.js/Express (server), and MySQL database event_booking_db.​
+Project Overview
+Smart Event Booking System is a MERN + MySQL application where users can browse upcoming events, view seat availability, and book tickets, while admins can manage events and track reservations.​
 
-  .Users can view upcoming events, see seat availability, and book tickets; admins can create, update, and delete events.​
+Tech Stack
+Frontend: React, JavaScript, CSS (or Tailwind CSS if used).​
 
--Tech Stack
-  .Frontend: React, JavaScript, CSS (Tailwind or normal CSS as used in this project).​
+Backend: Node.js, Express.js, MySQL.​
 
-  .Backend: Node.js, Express.js, MySQL.​
+Database: MySQL with event_booking_db containing events and bookings tables.​
 
-  .Database: MySQL with tables events and bookings.​
+How to Run Backend (server)
+Install dependencies:
 
--How to Run Backend (server)
-  .Install dependencies:
+bash
+cd server
+npm install
+Create a .env file inside the server folder with your MySQL configuration, for example:
 
--bash
- cd server
- npm install
- -Create a .env file inside the server folder with your MySQL config, for example:
-  .DB_HOST=localhost
+DB_HOST=localhost
 
-  .DB_USER=your_mysql_user
+DB_USER=your_mysql_user
 
-  .DB_PASSWORD=your_mysql_password
+DB_PASSWORD=your_mysql_password
 
-  .DB_NAME=event_booking_db
+DB_NAME=event_booking_db
 
--Start backend server:
+Start the backend server:
+
+bash
 npm start
-or use the script defined in server/package.json (for example npm run dev if configured).
+or use the script defined in server/package.json (for example npm run dev).
 
--How to Run Frontend (client)
- .Install dependencies:
+How to Run Frontend (client)
+Install dependencies:
 
-  .cd client
-  .npm install
-  
--Start React app:
-  .npm start
- or
+bash
+cd client
+npm install
+Start the React app:
 
+bash
+npm start
+or
 
+bash
 npm run dev
-Then open the URL shown in the terminal (for example http://localhost:3000 or http://localhost:5173).
+Open the URL shown in the terminal (for example http://localhost:3000 or http://localhost:5173).
 
 Database Setup (MySQL)
 Open MySQL Workbench (or any MySQL client).​
 
-Create database if not present:
+Create the database if it does not exist:
 
 sql
 CREATE DATABASE event_booking_db;
-Import the schema using the event_booking.sql file in the project root:
+Import the schema from the event_booking.sql file in the project root:
 
 Go to Server → Data Import.
 
 Choose Import from Self-Contained File and select event_booking.sql.
 
-Select target schema event_booking_db.
+Select the target schema event_booking_db.
 
 Click Start Import.​​
 
 Main Features
-List of upcoming events with title, description, location, date, price, total seats, and available seats.​
+List of events with title, description, location, date, price, total seats, and available seats.​
 
-Event detail page with full information and booking option.​
+Event details page with booking form.​
 
-Booking API stores user details (name, email, mobile), quantity, total amount, and booking status (confirmed/cancelled).​
+Bookings store user details (name, email, mobile), quantity, total amount, and booking status (confirmed or cancelled).​
 
-Admin can manage events (create, update, delete) through backend APIs.​
-
-API Endpoints (Summary)
-POST /events – Create event (admin).​
-
-GET /events – Get all events with search and filters.​
-
-GET /events/:id – Get single event details.​
-
-PUT /events/:id – Update event (admin).​
-
-DELETE /events/:id – Delete event (admin).​
-
-POST /bookings – Create a new booking.​
-
-
-
-
-
-
-
-
+Admin APIs for creating, updating, and deleting events.
